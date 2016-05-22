@@ -6,12 +6,14 @@
 [![Code Quality](https://img.shields.io/scrutinizer/g/inblank/yii2-transliter/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/inblank/yii2-transliter/?branch=master)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/inblank/yii2-transliter/master/LICENSE)
 
+> The **[English version](https://github.com/inblank/yii2-transliter/blob/master/README.md)** of this document available [here](https://github.com/inblank/yii2-transliter/blob/master/README.md).
+
 Компонент для траслитерации строк с русского по правилам, которые хорошо понимает
-[Яндекс](http://www.yandex.ru) (наш SEOшик так говорит, а мы просто работаем).
+[Яндекс](http://www.yandex.ru).
 Есть возможность задание собственной таблицы перевода и финальной обработки результата.
 
-По умолчанию делает дополнительную обработку `h` в результате, так как с русскими
-шипящими согласными может получится плохо читаемый текст (так говорит... кто? см. выше).  
+По умолчанию делает дополнительную обработку русской `х` в результате по следующим правилам:
+`kh` после букв `c`,`s`,`e`,`h`; в остальных случаях - `h`
 
 ## Установка
 

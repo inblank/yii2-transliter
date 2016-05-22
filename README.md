@@ -12,3 +12,40 @@ This transliteration component is used mainly for the transliteration of
 strings in the Russian language by the rules which are well understood 
 [Yandex](http://www.yandex.ru), and used to improve SEO.
 
+## Installation
+
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Navigate to the project folder and run the console command:
+
+```bash
+$ composer require inblank/yii2-transliter
+```
+
+or add:
+
+```json
+"inblank/yii2-transliter": "~0.1"
+```
+
+to the `require` section of your `composer.json` file.
+
+## Configuring
+
+In the application configuration file in section `components` add the lines:
+```php
+'transliter' => [
+    'class' => 'inblank\transliter\Transliter',
+],
+
+```
+
+As with all components in Yii2 you can set your parameters for the class.
+
+### Usage
+
+To transliterate of the string simple run:
+
+```php
+$result = Yii::$app->transliter->translate($str);
+```
