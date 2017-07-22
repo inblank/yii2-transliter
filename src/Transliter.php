@@ -83,7 +83,7 @@ class Transliter extends Component
             $str = call_user_func($this->after, $str);
         }
         // replace all non alpha-numeric characters
-        $str = preg_replace('~[^' . ($this->useDot ? '\.' : '') . '\s\w\d_]~uism', empty($this->replaceSpecial) ? '' : $this->replaceSpecial, $str);
+        $str = preg_replace('~[^' . ($this->useDot ? '\.' : '') . '\s\w\d_\-]~uism', empty($this->replaceSpecial) ? '' : $this->replaceSpecial, $str);
         // replace spaces
         $str = preg_replace('/\s/u', $spacer, $str);
         if ($toLower) {
