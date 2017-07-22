@@ -68,11 +68,11 @@ class TransliterTest extends TestCase
         $this->specify('transliterate with special chars', function () {
             $str = 'А~!@#$%^&*()_+`"№;:?-=[]{}\|<>.,\'/Я';
             // with cutting
-            $correctResult = "a_ya";
+            $correctResult = "a_-ya";
             $result = Yii::$app->transliter->translate($str);
             expect("transliterate string `{$str}`", $result)->equals($correctResult);
             // without cutting
-            $correctResult = "a_________________________________ya";
+            $correctResult = 'a___________________-_____________ya';
             Yii::$app->transliter->replaceSpecial = '_';
             $result = Yii::$app->transliter->translate($str);
             expect("transliterate string `{$str}`", $result)->equals($correctResult);
